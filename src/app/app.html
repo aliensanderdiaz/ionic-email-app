@@ -1,1 +1,22 @@
-<ion-nav [root]="rootPage"></ion-nav>
+<ion-menu [content]="contenido">
+    <ion-header>
+        <ion-toolbar>
+            <ion-title>Menú</ion-title>
+        </ion-toolbar>
+    </ion-header>
+    <ion-content>
+        <ion-list>
+            <button ion-item (click)="ir(inbox)">
+                <ion-icon name="mail" item-left></ion-icon>
+                Inbox
+                <ion-badge item-right color="dark">{{ noLeidosInbox }}</ion-badge>
+            </button>
+            <button ion-item (click)="ir(enviados)">
+                <ion-icon name="send" item-left></ion-icon>
+                Enviados
+            </button>
+        </ion-list>
+    </ion-content>
+</ion-menu>
+
+<ion-nav [root]="rootPage" #contenido></ion-nav>
